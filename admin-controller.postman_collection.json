@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "cee94510-3542-484d-83bc-c912a4442e36",
+		"name": "admin-controller",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23727829"
+	},
+	"item": [
+		{
+			"name": "getAllAdmins",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"message\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"successful\");\r",
+							"});\r",
+							"jsonData=JSON.parse(responseBody)\r",
+							"value=jsonData.data[0].adminId\r",
+							"pm.globals.set(\"id\",value);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "transfer-encoding",
+						"value": "chunked",
+						"type": "text"
+					}
+				],
+				"url": "localhost:8080/admin"
+			},
+			"response": []
+		},
+		{
+			"name": "saveAdmin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"message\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"successful\");\r",
+							"});\r",
+							"pm.test(\"Status code name \", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"krishna@gmail.com\",\r\n    \"name\": \"krishnagopalo\",\r\n    \"password\": \"9502978268\",\r\n      \"hospital\": {\r\n        \"id\": 2\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/admin"
+			},
+			"response": []
+		},
+		{
+			"name": "updateAdmin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"message\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"successful\");\r",
+							"});\r",
+							"pm.test(\"adminId\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(22);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"adminId\": 22,\r\n    \"email\": \"krishna@gmail.com\",\r\n    \"password\": \"glA2L9P8CQ6hFbKdY+0Wow==\",\r\n    \"name\": \"krishnagopal123\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/admin/22"
+			},
+			"response": []
+		},
+		{
+			"name": "getAdminById",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"message\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"successfull\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/admin/16"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteAdmin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							" pm.test(\"message\", function () {\r",
+							"     pm.expect(pm.response.text()).to.include(\"successful\");\r",
+							" });\r",
+							" pm.test(\"data\", function () {\r",
+							"     pm.expect(pm.response.text()).to.include(\"Admin deleted\");\r",
+							" });\r",
+							" "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/admin?id={{id}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": {
+			"password": "Krishna@9502978263",
+			"username": "Gopalakrishna307"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
