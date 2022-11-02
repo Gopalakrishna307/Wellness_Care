@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-11-02T01:01:46 IST" name="Default suite" finished-at="2022-11-02T01:01:54 IST" duration-ms="8191">
+    <groups>
+    </groups>
+    <test started-at="2022-11-02T01:01:46 IST" name="Default test" finished-at="2022-11-02T01:01:54 IST" duration-ms="8191">
+      <class name="com.restAssured.admin.UpdateAdmin">
+        <test-method signature="updateAdmin()[pri:0, instance:com.restAssured.admin.UpdateAdmin@1329eff]" started-at="2022-11-02T01:01:46 IST" name="updateAdmin" finished-at="2022-11-02T01:01:48 IST" duration-ms="2825" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateAdmin -->
+      </class> <!-- com.restAssured.admin.UpdateAdmin -->
+      <class name="com.restAssured.admin.GetAdminById">
+        <test-method signature="getAdminById()[pri:0, instance:com.restAssured.admin.GetAdminById@6497b078]" started-at="2022-11-02T01:01:48 IST" name="getAdminById" finished-at="2022-11-02T01:01:49 IST" duration-ms="196" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getAdminById -->
+      </class> <!-- com.restAssured.admin.GetAdminById -->
+      <class name="com.restAssured.admin.DeleteAdmin">
+        <test-method signature="deleteAdmin()[pri:0, instance:com.restAssured.admin.DeleteAdmin@41c2284a]" started-at="2022-11-02T01:01:49 IST" name="deleteAdmin" finished-at="2022-11-02T01:01:49 IST" duration-ms="47" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteAdmin -->
+      </class> <!-- com.restAssured.admin.DeleteAdmin -->
+      <class name="com.restAssured.admin.SaveAdmin">
+        <test-method signature="saveAbmin()[pri:0, instance:com.restAssured.admin.SaveAdmin@46fa7c39]" started-at="2022-11-02T01:01:53 IST" name="saveAbmin" finished-at="2022-11-02T01:01:54 IST" duration-ms="345" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- saveAbmin -->
+      </class> <!-- com.restAssured.admin.SaveAdmin -->
+      <class name="com.restAssured.admin.GetAllAdmin">
+        <test-method signature="getAll()[pri:0, instance:com.restAssured.admin.GetAllAdmin@53aad5d5]" started-at="2022-11-02T01:01:49 IST" name="getAll" finished-at="2022-11-02T01:01:53 IST" duration-ms="4726" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getAll -->
+      </class> <!-- com.restAssured.admin.GetAllAdmin -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
